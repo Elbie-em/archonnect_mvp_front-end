@@ -2,6 +2,7 @@ import './App.css';
 import store from './redux/store'
 import { Provider } from 'react-redux';
 import { BrowserRouter, Redirect, Route, Switch, NavLink } from 'react-router-dom';
+import Home from './components/Home';
 
 
 const App = () => {
@@ -11,7 +12,7 @@ const App = () => {
       <Provider store={store}>
         <div className="App">
         <Switch>
-          
+          <Route exact path={"/"} component={Home}/>
         </Switch>
         </div>
       </Provider>
