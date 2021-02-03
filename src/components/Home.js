@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import reviewInfo from '../staticData/reviewInfo'
+import ReviewCard from './ReviewCard'
 
 const Home = () => {
   return (
     <>
-      <section class="section-a p-2">
+      <section className="section-a p-2">
         <div className="container">
           <div className="d-flex flex-row justify-content-between mt-3">
             <img className="home-logo" src="https://i.ibb.co/D1kTVXk/logo-ac.png" alt="app-logo" />
@@ -77,10 +79,17 @@ const Home = () => {
       </section>
       <section className="section-d">
         <div className="container">
-          <div className="w-100 text-center p-5">
+          <div className="w-100 text-center p-3">
             <p className="text-muted custom-font-a xs-font">PEOPLE ARE ALREADY ENJOYING OUR SERVICE</p>
             <h3 className="custom-font-a">Look at what these have to say</h3>
           </div>
+        </div>
+        <div className="client-container">
+          {
+            reviewInfo.map(item => {
+              return <ReviewCard key={reviewInfo.indexOf(item)} img_url={item.img_url} title={item.title} name={item.name} comment={item.comment}/>
+            })
+          }
         </div>
       </section>
       <section className="section-e">
@@ -96,14 +105,14 @@ const Home = () => {
           <br />
           <br />
           <p className="text-muted custom-font-a xs-font">
-            Daytona Ave 130, Glabeek, Flanders, BE <br/>
+            Daytona Ave 130, Glabeek, Flanders, BE <br />
             37 St Laurent's St, Pawadulaanstraat CBD 3XR, Leuven<br />
             + 324 887 59 67
           </p>
           <br />
-          <i class="fab fa-facebook facebook fa-2x"></i><span className="text-w">XX</span>
-          <i class="fab fa-twitter-square twitter fa-2x"></i><span className="text-w">XX</span>
-          <i class="fab fa-instagram instagram fa-2x"></i>
+          <i className="fab fa-facebook facebook fa-2x"></i><span className="text-w">XX</span>
+          <i className="fab fa-twitter-square twitter fa-2x"></i><span className="text-w">XX</span>
+          <i className="fab fa-instagram instagram fa-2x"></i>
           <br />
           <br />
           <p className="text-muted custom-font-a xs-font">
