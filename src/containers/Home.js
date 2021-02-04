@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import reviewInfo from '../staticData/reviewInfo'
-import ReviewCard from './ReviewCard'
+import ReviewCard from '../components/ReviewCard'
 
 const Home = () => {
   return (
