@@ -10,9 +10,9 @@ const Home = () => {
         <div className="container">
           <div className="d-flex flex-row justify-content-between mt-3">
             <img className="home-logo" src="https://i.ibb.co/D1kTVXk/logo-ac.png" alt="app-logo" />
-            <div className="custom-font-a d-flex h-75">
-              <Link className="nav-link" to={"/"}>SIGN IN</Link>
-              <Link className="nav-link" to={"/"}>SIGN UP</Link>
+            <div className="custom-font-a d-flex justify-content-between">
+              <Link className="nav-link" to={"/signin"}>SIGN IN</Link>
+              <Link className="nav-link" to={"/signup"}>SIGN UP</Link>
             </div>
           </div>
           <div className="empty-div">
@@ -25,7 +25,7 @@ const Home = () => {
               The best offers for you to bring to life<br />
               Trust us, it all begins with choosing your dream home design with us
             </p>
-            <Link className="btn-start custom-font-a text-white" to={"/"}>START HERE</Link>
+            <Link className="btn-start custom-font-a rounded-pill" to={"/"}>START HERE</Link>
           </div>
         </div>
       </section>
@@ -47,7 +47,7 @@ const Home = () => {
               Share your experience and contribute to other have marvelous dream homes
             </p>
               <br />
-              <Link className="btn-start custom-font-a text-white" to={"/"}>VIEW PLANS</Link>
+              <Link className="btn-start custom-font-a rounded-pill" to={"/"}>VIEW PLANS</Link>
             </div>
             <div className="col-md-6 p-3">
               <img className="mock-img" src="https://i.ibb.co/LdMVvXg/mock.png" alt="mock-design" />
@@ -72,7 +72,7 @@ const Home = () => {
               Share your experience and invite your friends to join.
             </p>
               <br />
-              <Link className="btn-start custom-font-a text-white" to={"/"}>VIEW FAVOURITES</Link>
+              <Link className="btn-start custom-font-a rounded-pill" to={"/"}>VIEW FAVOURITES</Link>
             </div>
           </div>
         </div>
@@ -96,7 +96,7 @@ const Home = () => {
         <div className="w-100 text-center p-4">
           <h5 className="custom-font-a text-white">A Remarkable Perfection</h5>
           <br />
-          <Link className="btn-start custom-font-a text-white" to={"/"}>START HERE</Link>
+          <Link className="btn-start custom-font-a rounded-pill" to={"/"}>START HERE</Link>
         </div>
       </section>
       <section className="section-f">
