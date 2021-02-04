@@ -1,0 +1,34 @@
+import axios from "axios"
+import { GET_PLANS_FAILURE,GET_PLANS_SUCCESS, GET_PLANS_REQUEST } from "./housplanTypes"
+
+export const getPlansRequest = () => {
+  return {
+    type: GET_PLANS_REQUEST,
+  }
+}
+
+export const getPlansSuccess = (data) => {
+  return {
+    type: GET_PLANS_SUCCESS,
+    payload: data,
+  }
+}
+
+export const getPlansFailure = (error) => {
+  return {
+    type: GET_PLANS_FAILURE,
+    payload: error,
+  }
+}
+
+export const getPlans = () => {
+  return (dispatch) => {
+    dispatch(getPlansRequest())
+    axios.get("http://localhost:3001/api/v1/plans")
+    .then(response => {
+      dispatch(getPlansSuccess(response.data))
+    }).catch(error => {
+      dispatch(getPlansFailure(error))
+    })
+  }
+} 
