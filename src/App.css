@@ -170,3 +170,41 @@ body, html{
   width: 100%;
   height: 100vh;
 }
+
+/*Plans*/
+
+.plan-header {
+  position: relative;
+  bottom: 40px;
+}
+
+.plans-container {
+  overflow: hidden;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 90%;
+  width: 100%;
+}
+
+.plan-card {
+  display: inline-block;
+  height:90%;
+  width:350px;
+  margin: 15px;
+}
+
+.plan-design {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.plan-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.al-right {
+  text-align: right;
+}
