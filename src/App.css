@@ -2,7 +2,8 @@
   display: none;
 }
 
-body, html{
+body,
+html {
   height: 100%;
 }
 
@@ -16,7 +17,7 @@ body, html{
 
 .nav-link {
   text-decoration: none;
-  color:#fff;
+  color: #fff;
   line-height: 50px;
   font-weight: 900;
 }
@@ -30,7 +31,7 @@ body, html{
   height: 520px;
   background-image: url("https://i.ibb.co/0M6gWc5/bg-image.jpg");
   background-position: center;
-  background-size:cover;
+  background-size: cover;
 }
 
 .section-b {
@@ -45,19 +46,19 @@ body, html{
   background-color: #e7f0ff;
 }
 
-.section-d { 
+.section-d {
   width: 100%;
   height: 480px;
   background-color: #f7f7f5;
-  overflow:hidden;
+  overflow: hidden;
 }
 
-.section-e { 
+.section-e {
   width: 100%;
   height: 150px;
-  background:linear-gradient(90deg, rgba(66, 68, 71, 0.205) 0%, rgba(57, 63, 66, 0.493) 20%), url("https://i.ibb.co/0M6gWc5/bg-image.jpg") -1230px 10px;
+  background: linear-gradient(90deg, rgba(66, 68, 71, 0.205) 0%, rgba(57, 63, 66, 0.493) 20%), url("https://i.ibb.co/0M6gWc5/bg-image.jpg") -1230px 10px;
   background-position: center;
-  background-size:cover;
+  background-size: cover;
 }
 
 .section-f {
@@ -82,19 +83,15 @@ body, html{
 }
 
 .btn-start {
-  background-color: #F65D0e;
+  background-color: #f65d0e;
   text-decoration: none;
   padding: 10px;
   font-weight: 700;
   color: #fff;
 }
 
-.btn-start:hover,.auth-btn:hover{
-  color: #7b7a78;;
-}
-
 .auth-btn {
-  background-color: #F65D0e;
+  background-color: #f65d0e;
   text-decoration: none;
   padding: 10px;
   font-weight: 400;
@@ -102,6 +99,12 @@ body, html{
   color: #fff;
   border: none;
 }
+
+.btn-start:hover,
+.auth-btn:hover {
+  color: #7b7a78;
+}
+
 .mock-img {
   width: 100%;
   height: auto;
@@ -113,19 +116,19 @@ body, html{
 }
 
 .text-w {
-  color:#f7f7f5;
+  color: #f7f7f5;
 }
 
 .facebook {
-  color:#3c51a5
+  color: #3c51a5;
 }
 
 .twitter {
-  color: #5db2f7
+  color: #5db2f7;
 }
 
 .instagram {
-  color:#da488d
+  color: #da488d;
 }
 
 .client-container {
@@ -141,8 +144,8 @@ body, html{
   text-align: center;
   display: inline-block;
   flex-direction: column;
-  height:220px;
-  width:350px;
+  height: 220px;
+  width: 350px;
   background-color: #fff;
   padding: 10px;
   margin: 15px;
@@ -152,26 +155,26 @@ body, html{
   height: 80px;
   width: 80px;
   margin-left: auto;
-  margin-right:auto;
+  margin-right: auto;
 }
 
 @media (max-width: 768px) {
   .mock-img {
-     display: none;
+    display: none;
   }
 }
 
 /* Sign Up Styling */
 
 .auth-container {
-  background:linear-gradient(180deg, rgba(232, 236, 236, 0.929) 0%, rgba(234, 230, 224, 0.586) 100%), url("https://i.ibb.co/0M6gWc5/bg-image.jpg") -1230px 10px;
+  background: linear-gradient(180deg, rgba(232, 236, 236, 0.929) 0%, rgba(234, 230, 224, 0.586) 100%), url("https://i.ibb.co/0M6gWc5/bg-image.jpg") -1230px 10px;
   background-position: center;
-  background-size:cover;
+  background-size: cover;
   width: 100%;
   height: 100vh;
 }
 
-/*Plans*/
+/* Plans */
 
 .plan-header {
   position: relative;
@@ -189,8 +192,8 @@ body, html{
 
 .plan-card {
   display: inline-block;
-  height:90%;
-  width:350px;
+  height: 90%;
+  width: 350px;
   margin: 15px;
 }
 

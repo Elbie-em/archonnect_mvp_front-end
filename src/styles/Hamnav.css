@@ -1,79 +1,80 @@
-        
-        .navigation {
-          list-style: none;
-          background: #f7f5fA;
-          width: 100%;
-          height: 100%;
-          position: fixed;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          z-index: 0;
-          margin-top: 0;   
-        }
-        
-        a {
-          text-decoration:none;
-          color: #4f4b4b; /*white*/
-        }
-        
-        li.nav-item {
-          padding: 20px;
-          font-size: 22px;
-        }
-        
-        .content-wrap {
-          width: 100%;
-          height: 100vh;
-          background-color: #fff;
-          position: relative;
-          top: 0;
-          bottom: 100%;
-          left: 0;
-          z-index: 1;
-          padding-top: 4em; 
-        }
-        
-        .nav-trigger {
-          position: absolute;
-          clip: rect(0, 0, 0, 0);
-        }
-        
-        label[for="nav-trigger"] {
-          position: fixed; 
-          top: 15px;
-          left: 15px;
-          z-index: 2;
-          width: 30px;
-          height: 30px;
-          cursor: pointer;
-          color: #000;
-        }
-        
-        .hidden_nav:before {
-          content: "";
-          position: absolute;
-          top: 1em;
-          width: 2.5em;
-          height: .25em;
-          border-top: .7em double  #4f4b4b;
-          border-bottom: .7em double  #4f4b4b;
-          z-index: 3;
-        }
-        
-        .nav-trigger:checked + label {
-          left: 200px;
-        }
-        
-        .nav-trigger:checked ~ .content-wrap {
-          left: 250px;
-        }
-        
-        .nav-trigger + label, .content-wrap {
-          transition: left 0.2s;
-        }
-        
-        body {
-          overflow-x: hidden;
-        }
+
+.navigation {
+  list-style: none;
+  background: #f7f5fa;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #4f4b4b; /* white */
+}
+
+li.nav-item {
+  padding: 20px;
+  font-size: 22px;
+}
+
+.content-wrap {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+  padding-top: 4em;
+}
+
+.nav-trigger {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  color: #000;
+}
+
+.hidden_nav::before {
+  content: "";
+  position: absolute;
+  top: 1em;
+  width: 2.5em;
+  height: 0.25em;
+  border-top: 0.7em double  #4f4b4b;
+  border-bottom: 0.7em double  #4f4b4b;
+  z-index: 3;
+}
+
+.nav-trigger + label,
+.content-wrap {
+  transition: left 0.2s;
+}
+
+.nav-trigger:checked + label {
+  left: 200px;
+}
+
+.nav-trigger:checked ~ .content-wrap {
+  left: 250px;
+}
+
+body {
+  overflow-x: hidden;
+}
