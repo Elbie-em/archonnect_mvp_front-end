@@ -1,9 +1,32 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import reviewInfo from '../staticData/reviewInfo'
 import ReviewCard from '../components/ReviewCard'
+import { connect } from 'react-redux'
+import { checkLoggedInStatus } from '../redux'
 
-const Home = () => {
+const Home = ({ status, isLoggedIn }) => {
+
+  useEffect(() => {
+    isLoggedIn()
+  }, [isLoggedIn])
+
+  const showAuth = () => {
+    if (status.logged_in) {
+      return (
+        <>
+          <Link className="nav-link" to={"/"}>SIGNOUT</Link>
+        </>
+      )
+    }
+    else if (!status.logged_in) {
+      <>
+        <Link className="nav-link" to={"/signin"}>SIGN IN</Link>
+        <Link className="nav-link" to={"/signup"}>SIGN UP</Link>
+      </>
+    }
+  }
+
   return (
     <>
       <section className="section-a p-2">
@@ -11,8 +34,7 @@ const Home = () => {
           <div className="d-flex flex-row justify-content-between mt-3">
             <img className="home-logo" src="https://i.ibb.co/D1kTVXk/logo-ac.png" alt="app-logo" />
             <div className="custom-font-a d-flex justify-content-between">
-              <Link className="nav-link" to={"/signin"}>SIGN IN</Link>
-              <Link className="nav-link" to={"/signup"}>SIGN UP</Link>
+              {showAuth()}
             </div>
           </div>
           <div className="empty-div">
@@ -25,7 +47,7 @@ const Home = () => {
               The best offers for you to bring to life<br />
               Trust us, it all begins with choosing your dream home design with us
             </p>
-            <Link className="btn-start custom-font-a rounded-pill" to={"/"}>START HERE</Link>
+            <Link className="btn-start custom-font-a rounded-pill" to={"/houseplans"}>START HERE</Link>
           </div>
         </div>
       </section>
@@ -47,7 +69,7 @@ const Home = () => {
               Share your experience and contribute to other have marvelous dream homes
             </p>
               <br />
-              <Link className="btn-start custom-font-a rounded-pill" to={"/"}>VIEW PLANS</Link>
+              <Link className="btn-start custom-font-a rounded-pill" to={"/houseplans"}>VIEW PLANS</Link>
             </div>
             <div className="col-md-6 p-3">
               <img className="mock-img" src="https://i.ibb.co/LdMVvXg/mock.png" alt="mock-design" />
@@ -87,7 +109,7 @@ const Home = () => {
         <div className="client-container">
           {
             reviewInfo.map(item => {
-              return <ReviewCard key={reviewInfo.indexOf(item)} img_url={item.img_url} title={item.title} name={item.name} comment={item.comment}/>
+              return <ReviewCard key={reviewInfo.indexOf(item)} img_url={item.img_url} title={item.title} name={item.name} comment={item.comment} />
             })
           }
         </div>
@@ -96,7 +118,7 @@ const Home = () => {
         <div className="w-100 text-center p-4">
           <h5 className="custom-font-a text-white">A Remarkable Perfection</h5>
           <br />
-          <Link className="btn-start custom-font-a rounded-pill" to={"/"}>START HERE</Link>
+          <Link className="btn-start custom-font-a rounded-pill" to={"/houseplans"}>START HERE</Link>
         </div>
       </section>
       <section className="section-f">
@@ -124,4 +146,17 @@ const Home = () => {
   )
 }
 
-export default Home
+const mapStateToProps = state => {
+  return {
+    status: state.loggedIn.data
+  }
+}
+
+
+const mapDispatchToProps = dispatch => {
+  return {
+    isLoggedIn: () => dispatch(checkLoggedInStatus()),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
