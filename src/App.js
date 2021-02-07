@@ -14,12 +14,20 @@ const App = () => {
     <BrowserRouter>
       <Provider store={store}>
         <div className="App">
-        <Switch>
-          <Route exact path={"/"} component={Home}/>
-          <Route exact path={"/signup"} component={SignUp}/>
-          <Route exact path={"/signin"} component={SignIn}/>
-          <Route exact path={"/houseplans"} component={Houseplans}/>
-        </Switch>
+          <Switch>
+            <Route exact path={"/"} render={props => (
+              <Home {...props} />
+            )} />
+            <Route exact path={"/signup"} render={props => (
+              <SignUp {...props} />
+            )} />
+            <Route exact path={"/signin"} render={props => (
+              <SignIn {...props} />
+            )} />
+            <Route exact path={"/houseplans"} render={props => (
+              <Houseplans {...props} />
+            )} />
+          </Switch>
         </div>
       </Provider>
     </BrowserRouter>
