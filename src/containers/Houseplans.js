@@ -5,6 +5,7 @@ import { getPlans } from '../redux'
 import '../styles/Hamnav.css'
 import _ from 'lodash'
 import PlanCard from '../components/PlanCard'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 const Houseplans = ({ plans, getPlans }) => {
 
@@ -13,7 +14,7 @@ const Houseplans = ({ plans, getPlans }) => {
   }, [getPlans])
 
   const showPlans = () => {
-    if (!_.isEmpty(plans.data)) {
+    if (!_.isEmpty(plans.data.result) && plans.data.status === 200) {
       const res = plans.data.result  
       return (
         <>
@@ -24,6 +25,12 @@ const Houseplans = ({ plans, getPlans }) => {
           </div>
         </>
       )
+    }
+    if (plans.loading) {
+      return <LoadingSpinner />;
+    }
+    if (plans.errorMsg !== '') {
+      return <p className="text-danger mt-5">{plans.errorMsg}</p>;
     }
   }
 
