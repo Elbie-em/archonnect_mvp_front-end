@@ -14,9 +14,19 @@ const Plan = () => {
         <img className="blueprint" src="https://i.ibb.co/C78qz5q/lst-a-1.jpg" />
         <img className="blueprint" src="https://i.ibb.co/C78qz5q/lst-a-1.jpg" />
       </section>
+      <section className="blueprint-info">
+        <div className="plan-info">
+          <h6 className="custom-font-a">Designer</h6>
+          <h6 className="al-right custom-font-a">$0000</h6>
+        </div>
+        <div className="plan-info">
+          <h6 className="custom-font-a">Rating</h6>
+          <h6 className="al-right custom-font-b xs-font">current bid</h6>
+        </div>
+      </section>
       <section className="blueprint-details p-3">
         <article className="custom-font-b">
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         </article>
       </section>
       <div className="btn-bid p-3">

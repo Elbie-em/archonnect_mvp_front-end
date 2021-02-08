@@ -226,7 +226,7 @@ html {
 
 .blueprints {
   width: 100%;
-  height: 50%;
+  height: 40%;
   overflow: hidden;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -238,6 +238,13 @@ html {
   width: 400px;
   height: auto;
   margin: 10px;
+}
+
+.blueprint-info {
+  width: 100%;
+  padding-left:25px;
+  padding-right:25px;
+  height: 10%;
 }
 
 .blueprint-details {
@@ -263,5 +270,7 @@ html {
   cursor: pointer;
   background-color: #c44709;
 }
+
+
 
 
