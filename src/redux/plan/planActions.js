@@ -21,14 +21,14 @@ export const getPlanFailure = (error) => {
   }
 }
 
-export const getPlans = (id) => {
+export const getPlan = (id) => {
   return (dispatch) => {
-    dispatch(getPlansRequest())
+    dispatch(getPlanRequest())
     axios.get(`http://localhost:3001/api/v1/plans/${id}`, { withCredentials: true })
       .then(response => {
-        dispatch(getPlansSuccess(response.data))
+        dispatch(getPlanSuccess(response.data))
       }).catch(error => {
-        dispatch(getPlansFailure(error))
+        dispatch(getPlanFailure(error))
       })
   }
 } 
