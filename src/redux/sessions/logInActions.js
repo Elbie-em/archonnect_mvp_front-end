@@ -24,11 +24,11 @@ export const logInFailure = (error) => {
 export const logIn = (data) => {
   return (dispatch) => {
     dispatch(logInRequest())
-    axios.post(`http://localhost:3001/api/v1/logged_in`, data, { withCredentials: true })
+    return axios.post(`http://localhost:3001/api/v1/sessions`, data, { withCredentials: true })
       .then(response => {
-        dispatch(logInSuccess(response.data))
+        return dispatch(logInSuccess(response.data))
       }).catch(error => {
-        dispatch(logInFailure(error))
+        return dispatch(logInFailure(error))
       })
   }
 }
