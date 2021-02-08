@@ -24,7 +24,7 @@ export const logoutFailure = (error) => {
 export const logout = (data) => {
   return (dispatch) => {
     dispatch(logoutRequest())
-    axios.delete(`http://localhost:3001/api/v1/logout`)
+    axios.delete(`http://localhost:3001/api/v1/logout`, { withCredentials: true })
       .then(response => {
         dispatch(logoutSuccess(response.data))
       }).catch(error => {
