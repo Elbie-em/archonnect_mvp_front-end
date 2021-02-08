@@ -5,6 +5,7 @@
 body,
 html {
   height: 100%;
+  background: #f7f7f5;
 }
 
 .custom-font-a {
@@ -229,7 +230,7 @@ html {
   height: 40%;
   overflow: hidden;
   overflow-x: scroll;
-  overflow-y: hidden;
+  overflow-y: scroll;
   white-space: nowrap;
   padding: 20px;
 }
@@ -242,6 +243,7 @@ html {
 
 .blueprint-info {
   width: 100%;
+  padding-top:10px;
   padding-left:25px;
   padding-right:25px;
   height: 10%;
