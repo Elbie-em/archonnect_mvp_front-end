@@ -15,6 +15,7 @@ const Home = ({ status, isLoggedIn }) => {
     if (status.logged_in) {
       return (
         <>
+          <h6 className="nav-link">{status.user.email}</h6>
           <Link className="nav-link" to={"/"}>SIGNOUT</Link>
         </>
       )
