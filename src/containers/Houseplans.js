@@ -39,7 +39,7 @@ const Houseplans = ({ history, loggedInStatus, isLoggedIn, plans, getPlans, logo
         <>
           <div className="plans-container">
             {
-              res.map((item, idx) => <PlanCard key={idx} img_url={item.design_img_url} name={item.name} price={item.price} />)
+              res.map((item, idx) => <PlanCard key={idx} id={item.id} img_url={item.design_img_url} name={item.name} price={item.price} />)
             }
           </div>
         </>
