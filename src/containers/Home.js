@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import reviewInfo from '../staticData/reviewInfo'
 import ReviewCard from '../components/ReviewCard'
@@ -21,10 +21,13 @@ const Home = ({ status, isLoggedIn }) => {
       )
     }
     else if (!status.logged_in) {
-      <>
-        <Link className="nav-link" to={"/signin"}>SIGN IN</Link>
-        <Link className="nav-link" to={"/signup"}>SIGN UP</Link>
-      </>
+      return (
+        <>
+          <Link className="nav-link" to={"/signin"}>SIGN IN</Link>
+          <Link className="nav-link" to={"/signup"}>SIGN UP</Link>
+        </>
+      )
+
     }
   }
 
