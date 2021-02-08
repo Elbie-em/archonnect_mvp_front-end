@@ -1,4 +1,4 @@
-import { GET_PLANS_FAILURE,GET_PLANS_SUCCESS, GET_PLANS_REQUEST } from "./housplanTypes"
+import { GET_PLANS_FAILURE,GET_PLANS_SUCCESS, GET_PLANS_REQUEST } from "./houseplanTypes"
 
 const initialState = {
   loading: true,
