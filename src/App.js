@@ -6,6 +6,7 @@ import Home from './containers/Home';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Houseplans from './containers/Houseplans';
+import Plan from './containers/Plan';
 
 
 const App = () => {
@@ -27,6 +28,8 @@ const App = () => {
             <Route exact path={"/houseplans"} render={props => (
               <Houseplans {...props} />
             )} />
+            <Route path="/houseplans/:id" exact component={Plan} />
+            <Redirect to="/"/>
           </Switch>
         </div>
       </Provider>

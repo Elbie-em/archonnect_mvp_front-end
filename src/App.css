@@ -218,3 +218,50 @@ html {
   color: #f65d0e;
 }
 
+.sp-bg {
+ background: #f7f7f5;
+ width: 100%;
+ height: 100vh;
+}
+
+.blueprints {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 20px;
+}
+
+.blueprint {
+  width: 400px;
+  height: auto;
+  margin: 10px;
+}
+
+.blueprint-details {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+
+.btn-bid {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background-color: #f65d0e;
+  height: 70px;
+  width: 100%;
+}
+
+.btn-bid:hover {
+  cursor: pointer;
+  background-color: #c44709;
+}
+
+
