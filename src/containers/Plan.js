@@ -1,39 +1,59 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
+import LoadingSpinner from '../components/LoadingSpinner';
+import SPlanCard from '../components/SPlanCard';
+import {getPlan} from '../redux'
 
-const Plan = () => {
+const Plan = ({ match, plan, getPlan}) => {
+  const planId = match.params.id;
+  useEffect(() => {
+    getPlan(planId)
+  }, [getPlan]);
+
+  
+  const showPlan = () => {
+    if (!_.isEmpty(plan.data.result) && plan.data.status === 202) {
+      const item = plan.data.result
+      return (
+        <>
+           <SPlanCard name={item.name} details={item.details} architect={item.architect_name} rating={item.rating} price={item.price} imgF={item.design_img_url} imgS={item.blueprint_one_url} imgT={item.blueprint_two_url} />
+        </>
+      )
+    }
+    else if (plan.data.status === 401) {
+      return (
+        <>
+          <div className="text-center">
+            <div className="empty-div"></div>
+            <h1 className="custom-font-b text-danger">401: Authorization Required</h1>
+            <h5 className="custom-font-b"><Link to={"/"}><u>Go Home</u></Link></h5>
+          </div>
+        </>
+      )
+    }
+    if (plan.loading) {
+      return <LoadingSpinner />;
+    }
+    if (plan.errorMsg !== '') {
+      return <p className="text-danger mt-5">{plan.errorMsg}</p>;
+    }
+  }
+
+
   return (
     <div className="sp-bg">
-      <div className="d-flex justify-content-between p-2 w-100 shadow-sm">
-        <Link to={"/houseplans"}><i className="fas fa-angle-left fa-2x"></i></Link>
-        <h1 className="custom-font-a">Plan X</h1>
-        <Link to={"/"}><i className="fas fa-sign-out-alt fa-2x"></i></Link>
-      </div>
-      <section className="blueprints">
-        <img className="blueprint" src="https://i.ibb.co/C78qz5q/lst-a-1.jpg" />
-        <img className="blueprint" src="https://i.ibb.co/C78qz5q/lst-a-1.jpg" />
-        <img className="blueprint" src="https://i.ibb.co/C78qz5q/lst-a-1.jpg" />
-      </section>
-      <section className="blueprint-info">
-        <div className="plan-info">
-          <h6 className="custom-font-a">Designer</h6>
-          <h6 className="al-right custom-font-a">$0000</h6>
-        </div>
-        <div className="plan-info">
-          <h6 className="custom-font-a">Rating</h6>
-          <h6 className="al-right custom-font-b xs-font">current bid</h6>
-        </div>
-      </section>
-      <section className="blueprint-details p-3">
-        <article className="custom-font-b">
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </article>
-      </section>
-      <div className="btn-bid p-3">
-        <h4 className="text-white custom-font-a">BID</h4>
-      </div>
+      {showPlan()}
     </div>
   )
 }
 
-export default Plan
+const mapStateToProps = state => ({
+  plan: state.plan,
+});
+
+const mapDispatchToProps = dispatch => ({
+  getPlan: id => dispatch(getPlan(id)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Plan)
