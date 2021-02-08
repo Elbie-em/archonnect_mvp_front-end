@@ -45,7 +45,8 @@ const SignUp = ({ history, status, isLoggedIn, checkUser, createUser }) => {
       return (
         <>
           <img className="footer-logo mt-3" src="https://i.ibb.co/vHyFVVz/logo-ac-b.png" alt="footer-logo" />
-          <h1 className="custom-font-b">You are Already Logged In</h1>
+          <h1 className="custom-font-b">You are Already Logged In!!!</h1>
+          <h5 className="custom-font-b"><Link to={"/"}><u>Go Home</u></Link></h5>
         </>
       )
     }

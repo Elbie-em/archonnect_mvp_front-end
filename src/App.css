@@ -22,8 +22,10 @@ html {
   font-weight: 900;
 }
 
+
 .nav-link:hover {
   color: #7b7a78;
+  cursor: pointer;
 }
 
 .section-a {
@@ -213,5 +215,6 @@ html {
 }
 
 .loading-sp {
-  color: #f65d0e
+  color: #f65d0e;
 }
+
