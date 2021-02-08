@@ -1,27 +1,56 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { getPlans } from '../redux'
+import { checkLoggedInStatus, getPlans, logout } from '../redux'
 import '../styles/Hamnav.css'
 import _ from 'lodash'
 import PlanCard from '../components/PlanCard'
 import LoadingSpinner from '../components/LoadingSpinner'
 
-const Houseplans = ({ plans, getPlans }) => {
+const Houseplans = ({ history, loggedInStatus, isLoggedIn, plans, getPlans, logout }) => {
 
   useEffect(() => {
     getPlans()
-  }, [getPlans])
+    isLoggedIn()
+  }, [getPlans, isLoggedIn])
+
+  const showONavLinks = () => {
+    if (loggedInStatus.logged_in) {
+      return (
+        <>
+          <li className="nav-item"><Link to={"/houseplans"}>House Plans</Link></li>
+          <li className="nav-item"><Link to={"/houseplans"}>Favourites</Link></li>
+          <li className="nav-item"><button className="btn btn-start rounded-pill xs-font" onClick={handleLogout}>Logout&nbsp;&nbsp;<i className="fas fa-sign-out-alt"></i></button></li>
+        </>
+      )
+    }
+  }
+  const handleLogout = () => {
+    logout()
+    setTimeout(() => {
+      history.push("/signin")
+    }, 3000);
+  }
 
   const showPlans = () => {
     if (!_.isEmpty(plans.data.result) && plans.data.status === 200) {
-      const res = plans.data.result  
+      const res = plans.data.result
       return (
         <>
           <div className="plans-container">
             {
-              res.map((item,idx) => <PlanCard key={idx} img_url={item.design_img_url} name={item.name} price={item.price}/>)
+              res.map((item, idx) => <PlanCard key={idx} img_url={item.design_img_url} name={item.name} price={item.price} />)
             }
+          </div>
+        </>
+      )
+    }
+    else if (plans.data.status === 401) {
+      return (
+        <>
+          <div className="text-center">
+            <h1 className="custom-font-b text-danger">401: Authorization Required</h1>
+            <h5 className="custom-font-b"><Link to={"/"}><u>Go Home</u></Link></h5>
           </div>
         </>
       )
@@ -36,12 +65,11 @@ const Houseplans = ({ plans, getPlans }) => {
 
 
   return (
-    <div className="bg-plans">
+    <div>
       <ul className="navigation">
         <img className="footer-logo mt-3" src="https://i.ibb.co/vHyFVVz/logo-ac-b.png" alt="footer-logo" />
         <li className="nav-item"><Link to={"/"}>Home</Link></li>
-        <li className="nav-item"><Link to={"/houseplans"}>House Plans</Link></li>
-        <li className="nav-item"><Link to={"/houseplans"}>Favourites</Link></li>
+        {showONavLinks()}
       </ul>
 
       <input type="checkbox" id="nav-trigger" className="nav-trigger " />
@@ -57,13 +85,16 @@ const Houseplans = ({ plans, getPlans }) => {
 
 const mapStateToProps = state => {
   return {
+    loggedInStatus: state.loggedIn.data,
     plans: state.plans
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getPlans: () => dispatch(getPlans())
+    isLoggedIn: () => dispatch(checkLoggedInStatus()),
+    getPlans: () => dispatch(getPlans()),
+    logout: () => dispatch(logout())
   }
 }
 
