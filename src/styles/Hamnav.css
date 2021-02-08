@@ -18,7 +18,12 @@ a {
   color: #4f4b4b; /* white */
 }
 
+a:hover {
+  color:#f65d0e;
+}
+
 li.nav-item {
+  text-decoration: none;
   padding: 20px;
   font-size: 22px;
 }
