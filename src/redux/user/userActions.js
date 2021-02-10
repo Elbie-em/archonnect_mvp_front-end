@@ -24,7 +24,7 @@ export const checkUserFailure = (error) => {
 export const checkUser = (email) => {
   return (dispatch) => {
     dispatch(checkUserRequest())
-   return axios.get(`http://localhost:3001/api/v1/registrations/${email}`)
+   return axios.get(`https://api-archonnect-mvp.herokuapp.com/api/v1/${email}`)
     .then(response => {
       return dispatch(checkUserSuccess(response.data))
     }).catch(error => {

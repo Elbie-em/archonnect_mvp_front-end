@@ -24,7 +24,7 @@ export const getPlansFailure = (error) => {
 export const getPlans = () => {
   return (dispatch) => {
     dispatch(getPlansRequest())
-    axios.get("http://localhost:3001/api/v1/plans",{withCredentials:true})
+    axios.get("https://api-archonnect-mvp.herokuapp.com/api/v1/plans",{withCredentials:true})
     .then(response => {
       dispatch(getPlansSuccess(response.data))
     }).catch(error => {

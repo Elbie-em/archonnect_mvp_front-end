@@ -45,7 +45,7 @@ export const createFavouriteFailure = (error) => {
 export const createFavourite = (data) => {
   return (dispatch) => {
     dispatch(createFavouriteRequest())
-    return axios.post("http://localhost:3001/api/v1/favourites",
+    return axios.post("https://api-archonnect-mvp.herokuapp.com/api/v1/favourites",
     data,
     {
       withCredentials: true
@@ -61,7 +61,7 @@ export const createFavourite = (data) => {
 export const getFavourites = () => {
   return (dispatch) => {
     dispatch(getFavouriteRequest())
-    axios.get(`http://localhost:3001/api/v1/favourites`, { withCredentials: true })
+    axios.get("https://api-archonnect-mvp.herokuapp.com/api/v1/favourites", { withCredentials: true })
       .then(response => {
         dispatch(getFavouriteSuccess(response.data))
       }).catch(error => {

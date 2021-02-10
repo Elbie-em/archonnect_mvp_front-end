@@ -23,7 +23,7 @@ export const createUserFailure = (error) => {
 export const createUser = (data) => {
   return (dispatch) => {
     dispatch(createUserRequest())
-    axios.post("http://localhost:3001/api/v1/registrations",
+    axios.post("https://api-archonnect-mvp.herokuapp.com/api/v1/registrations",
     data,
     {
       withCredentials: true

@@ -23,7 +23,7 @@ export const checkLoggedInFailure = (error) => {
 export const checkLoggedInStatus = () => {
   return (dispatch) => {
     dispatch(checkLoggedInRequest())
-    axios.get(`http://localhost:3001/api/v1/logged_in`, { withCredentials: true })
+    axios.get("https://api-archonnect-mvp.herokuapp.com/api/v1/logged_in", { withCredentials: true })
       .then(response => {
         dispatch(checkLoggedInSuccess(response.data))
       }).catch(error => {

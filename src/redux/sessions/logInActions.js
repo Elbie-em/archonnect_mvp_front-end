@@ -24,8 +24,9 @@ export const logInFailure = (error) => {
 export const logIn = (data) => {
   return (dispatch) => {
     dispatch(logInRequest())
-    return axios.post(`http://localhost:3001/api/v1/sessions`, data, { withCredentials: true })
+    return axios.post("https://api-archonnect-mvp.herokuapp.com/api/v1/sessions", data, { withCredentials: true })
       .then(response => {
+        console.log(response.data)
         return dispatch(logInSuccess(response.data))
       }).catch(error => {
         return dispatch(logInFailure(error))
