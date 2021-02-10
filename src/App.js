@@ -1,12 +1,13 @@
 import './App.css';
 import store from './redux/store'
 import { Provider } from 'react-redux';
-import { BrowserRouter, Redirect, Route, Switch, NavLink } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 import Home from './containers/Home';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Houseplans from './containers/Houseplans';
 import Plan from './containers/Plan';
+import Favourites from './containers/Favourites';
 
 
 const App = () => {
@@ -29,6 +30,9 @@ const App = () => {
               <Houseplans {...props} />
             )} />
             <Route path="/houseplans/:id" exact component={Plan} />
+            <Route exact path={"/favourites"} render={props => (
+              <Favourites {...props} />
+            )} />
             <Redirect to="/"/>
           </Switch>
         </div>
