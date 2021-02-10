@@ -1,35 +1,35 @@
-import { CHECK_LOGGED_IN_FAILURE, CHECK_LOGGED_IN_REQUEST, CHECK_LOGGED_IN_SUCCESS } from "./loggedInTypes"
+import { CHECK_LOGGED_IN_FAILURE, CHECK_LOGGED_IN_REQUEST, CHECK_LOGGED_IN_SUCCESS } from './loggedInTypes';
 
 const initialState = {
   loading: true,
   data: [],
   errorMsg: '',
-}
+};
 
 const loggedInReducer = (state = initialState, action) => {
-  switch(action.type){
+  switch (action.type) {
     case CHECK_LOGGED_IN_REQUEST:
       return {
         ...state,
-        loading: true
-      }
+        loading: true,
+      };
     case CHECK_LOGGED_IN_SUCCESS:
       return {
         ...state,
         loading: false,
         data: action.payload,
-        errorMsg: ''
-      }
+        errorMsg: '',
+      };
     case CHECK_LOGGED_IN_FAILURE:
       return {
         ...state,
         loading: false,
         data: [],
-        errorMsg: action.payload
-      }
+        errorMsg: action.payload,
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default loggedInReducer
+export default loggedInReducer;

@@ -1,35 +1,35 @@
-import { GET_FAVOURITES_FAILURE,GET_FAVOURITES_SUCCESS, GET_FAVOURITES_REQUEST } from "./favouritesTypes"
+import { GET_FAVOURITES_FAILURE, GET_FAVOURITES_SUCCESS, GET_FAVOURITES_REQUEST } from './favouritesTypes';
 
 const initialState = {
   loading: true,
   data: [],
   errorMsg: '',
-}
+};
 
 const favouriteReducer = (state = initialState, action) => {
-  switch(action.type){
+  switch (action.type) {
     case GET_FAVOURITES_REQUEST:
       return {
         ...state,
-        loading: true
-      }
+        loading: true,
+      };
     case GET_FAVOURITES_SUCCESS:
       return {
         ...state,
         loading: false,
         data: action.payload,
-        errorMsg: ''
-      }
+        errorMsg: '',
+      };
     case GET_FAVOURITES_FAILURE:
       return {
         ...state,
         loading: false,
         data: [],
-        errorMsg: action.payload
-      }
+        errorMsg: action.payload,
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default favouriteReducer
+export default favouriteReducer;

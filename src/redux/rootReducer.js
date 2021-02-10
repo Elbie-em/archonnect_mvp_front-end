@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import loggedInReducer from './sessions/loggedInReducer'
-import houseplanReducer from './plans/houseplanReducer'
+import loggedInReducer from './sessions/loggedInReducer';
+import houseplanReducer from './plans/houseplanReducer';
 import planReducer from './plan/planReducer';
-import favouriteRedcuer from './favourites/favouriteReducer'
+import favouriteRedcuer from './favourites/favouriteReducer';
 
 const rootReducer = combineReducers({
   loggedIn: loggedInReducer,
-  plans:houseplanReducer,
+  plans: houseplanReducer,
   plan: planReducer,
   favourites: favouriteRedcuer,
 });

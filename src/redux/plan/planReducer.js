@@ -1,35 +1,35 @@
-import { GET_PLAN_FAILURE,GET_PLAN_SUCCESS, GET_PLAN_REQUEST } from "./planTypes"
+import { GET_PLAN_FAILURE, GET_PLAN_SUCCESS, GET_PLAN_REQUEST } from './planTypes';
 
 const initialState = {
   loading: true,
   data: [],
   errorMsg: '',
-}
+};
 
 const planReducer = (state = initialState, action) => {
-  switch(action.type){
+  switch (action.type) {
     case GET_PLAN_REQUEST:
       return {
         ...state,
-        loading: true
-      }
+        loading: true,
+      };
     case GET_PLAN_SUCCESS:
       return {
         ...state,
         loading: false,
         data: action.payload,
-        errorMsg: ''
-      }
+        errorMsg: '',
+      };
     case GET_PLAN_FAILURE:
       return {
         ...state,
         loading: false,
         data: [],
-        errorMsg: action.payload
-      }
+        errorMsg: action.payload,
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default planReducer
+export default planReducer;
