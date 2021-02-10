@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom'
 
 const PlanCard = ({id,img_url, name, price }) => {
   return (
-    <div className="shadow-lg rounded plan-card">
-      <img className="plan-design" src={img_url} alt={img_url} />
+    <div className="shadow rounded plan-card">
+      <img className="plan-design rounded-top" src={img_url} alt={img_url} />
       <div className="d-flex flex-column p-3">
         <div className="plan-info">
           <h6 className="custom-font-a">{name}</h6>
