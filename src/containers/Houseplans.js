@@ -7,7 +7,7 @@ import _ from 'lodash'
 import PlanCard from '../components/PlanCard'
 import LoadingSpinner from '../components/LoadingSpinner'
 
-const Houseplans = ({ history, loggedInStatus, isLoggedIn, plans, getPlans, logout }) => {
+const Houseplans = ({ history, loggedInStatus, isLoggedIn, plans, getPlans, logout}) => {
 
   useEffect(() => {
     getPlans()
@@ -19,12 +19,13 @@ const Houseplans = ({ history, loggedInStatus, isLoggedIn, plans, getPlans, logo
       return (
         <>
           <li className="nav-item"><Link to={"/houseplans"}>House Plans</Link></li>
-          <li className="nav-item"><Link to={"/houseplans"}>Favourites</Link></li>
+          <li className="nav-item"><Link to={"/favourites"}>Favourites</Link></li>
           <li className="nav-item"><button className="btn btn-start rounded-pill xs-font" onClick={handleLogout}>Logout&nbsp;&nbsp;<i className="fas fa-sign-out-alt"></i></button></li>
         </>
       )
     }
   }
+  
   const handleLogout = () => {
     logout()
     setTimeout(() => {

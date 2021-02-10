@@ -3,20 +3,27 @@ import { Link } from 'react-router-dom'
 import reviewInfo from '../staticData/reviewInfo'
 import ReviewCard from '../components/ReviewCard'
 import { connect } from 'react-redux'
-import { checkLoggedInStatus } from '../redux'
+import { checkLoggedInStatus, logout } from '../redux'
 
-const Home = ({ status, isLoggedIn }) => {
+const Home = ({ history, status, isLoggedIn,logout }) => {
 
   useEffect(() => {
     isLoggedIn()
   }, [isLoggedIn])
+
+  const handleLogout = () => {
+    logout()
+    setTimeout(() => {
+      history.push("/")
+    }, 3000);
+  }
 
   const showAuth = () => {
     if (status.logged_in) {
       return (
         <>
           <h6 className="nav-link">{status.user.email}</h6>
-          <Link className="nav-link" to={"/"}>SIGNOUT</Link>
+          <h6 className="nav-link" onClick={handleLogout}>SIGNOUT</h6>
         </>
       )
     }
@@ -98,7 +105,7 @@ const Home = ({ status, isLoggedIn }) => {
               Share your experience and invite your friends to join.
             </p>
               <br />
-              <Link className="btn-start custom-font-a rounded-pill" to={"/"}>VIEW FAVOURITES</Link>
+              <Link className="btn-start custom-font-a rounded-pill" to={"/favourites"}>VIEW FAVOURITES</Link>
             </div>
           </div>
         </div>
@@ -160,6 +167,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     isLoggedIn: () => dispatch(checkLoggedInStatus()),
+    logout: () => dispatch(logout())
   }
 }
 
