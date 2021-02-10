@@ -156,7 +156,7 @@ html {
 
 .rc-img {
   height: 80px;
-  width: 80px;
+  width: 100px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -167,8 +167,6 @@ html {
   }
 }
 
-/* Sign Up Styling */
-
 .auth-container {
   background: linear-gradient(180deg, rgba(232, 236, 236, 0.929) 0%, rgba(234, 230, 224, 0.586) 100%), url("https://i.ibb.co/0M6gWc5/bg-image.jpg") -1230px 10px;
   background-position: center;
@@ -177,7 +175,6 @@ html {
   height: 100vh;
 }
 
-/* Plans */
 
 .plan-header {
   position: relative;
@@ -198,6 +195,17 @@ html {
   height: 90%;
   width: 350px;
   margin: 15px;
+}
+
+.fav-card {
+  width: 300px;
+  height: 250px;
+  margin: 15px;
+}
+
+.fav-card-th {
+  width: 100%;
+  height: auto;
 }
 
 .plan-design {
@@ -246,7 +254,7 @@ html {
   padding-top:10px;
   padding-left:25px;
   padding-right:25px;
-  height: 10%;
+  height: 15%;
 }
 
 .blueprint-details {
@@ -264,15 +272,30 @@ html {
   left: 0;
   text-align: center;
   background-color: #f65d0e;
-  height: 70px;
+  height: 60px;
   width: 100%;
 }
 
-.btn-bid:hover {
+.fav-btn {
+  width: 120px;
+  background-color: #f65d0e;
+  font-size: 10px;
+}
+
+.btn-bid:hover, .fav-btn:hover {
   cursor: pointer;
   background-color: #c44709;
 }
 
-
+.favourite-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 500px;
+  width: 100%;
+}
 
 
