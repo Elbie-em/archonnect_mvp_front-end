@@ -90,11 +90,10 @@ const Favourites = ({
         {showONavLinks()}
       </ul>
 
-      <label htmlFor="nav-trigger">
-        <span className="hidden_nav" />
-        <input type="checkbox" id="nav-trigger" className="nav-trigger " />
-      </label>
-
+      {/* eslint-disable  jsx-a11y/label-has-associated-control */}
+      <input type="checkbox" id="nav-trigger" className="nav-trigger " />
+      <label htmlFor="nav-trigger"><span className="hidden_nav" /></label>
+      {/* eslint-enable  jsx-a11y/label-has-associated-control */}
       <div className="content-wrap">
         <h2 className="text-center custom-font-a plan-header">
           <i className="fas fa-star text-warning" />
@@ -121,9 +120,9 @@ const mapDispatchToProps = dispatch => ({
 });
 
 Favourites.propTypes = {
-  history: PropTypes.arrayOf(PropTypes.object).isRequired,
-  loggedInStatus: PropTypes.arrayOf(PropTypes.object).isRequired,
-  favourites: PropTypes.arrayOf(PropTypes.object).isRequired,
+  history: PropTypes.instanceOf(Object).isRequired,
+  loggedInStatus: PropTypes.instanceOf(Object).isRequired,
+  favourites: PropTypes.instanceOf(Object).isRequired,
   getFavourites: PropTypes.func.isRequired,
   logout: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.func.isRequired,

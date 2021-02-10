@@ -91,11 +91,10 @@ const Houseplans = ({
         {showONavLinks()}
       </ul>
 
-      <label htmlFor="nav-trigger">
-        <span className="hidden_nav" />
-        <input type="checkbox" id="nav-trigger" className="nav-trigger " />
-      </label>
-
+      {/* eslint-disable  jsx-a11y/label-has-associated-control */}
+      <input type="checkbox" id="nav-trigger" className="nav-trigger " />
+      <label htmlFor="nav-trigger"><span className="hidden_nav" /></label>
+      {/* eslint-enable  jsx-a11y/label-has-associated-control */}
       <div className="content-wrap">
         <h2 className="text-center custom-font-a plan-header">House Plans</h2>
         {showPlans()}
@@ -116,9 +115,9 @@ const mapDispatchToProps = dispatch => ({
 });
 
 Houseplans.propTypes = {
-  history: PropTypes.arrayOf(PropTypes.object).isRequired,
-  loggedInStatus: PropTypes.arrayOf(PropTypes.object).isRequired,
-  plans: PropTypes.arrayOf(PropTypes.object).isRequired,
+  history: PropTypes.instanceOf(Object).isRequired,
+  loggedInStatus: PropTypes.instanceOf(Object).isRequired,
+  plans: PropTypes.instanceOf(Object).isRequired,
   getPlans: PropTypes.func.isRequired,
   logout: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.func.isRequired,

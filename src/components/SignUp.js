@@ -35,7 +35,7 @@ const SignUp = ({
           history.push('/houseplans');
         }
       }).catch(e => {
-        alert(e);// eslint-disable-line no-alert
+        alert(e); // eslint-disable-line no-alert
       });
 
     event.preventDefault();

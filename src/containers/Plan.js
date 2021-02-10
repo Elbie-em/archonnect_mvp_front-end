@@ -99,8 +99,8 @@ const mapDispatchToProps = dispatch => ({
 
 Plan.propTypes = {
   match: PropTypes.string.isRequired,
-  loggedInStatus: PropTypes.arrayOf(PropTypes.object).isRequired,
-  plan: PropTypes.arrayOf(PropTypes.object).isRequired,
+  loggedInStatus: PropTypes.instanceOf(Object).isRequired,
+  plan: PropTypes.instanceOf(Object).isRequired,
   getPlan: PropTypes.func.isRequired,
   createFavourite: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.func.isRequired,
