@@ -18,7 +18,7 @@ export const getPlanFailure = error => ({
 
 export const getPlan = id => dispatch => {
   dispatch(getPlanRequest());
-  axios.get(`${BASEURL}/${id}`, { withCredentials: true })
+  axios.get(`${BASEURL}/houseplans/${id}`, { withCredentials: true })
     .then(response => {
       dispatch(getPlanSuccess(response.data));
     }).catch(error => {
