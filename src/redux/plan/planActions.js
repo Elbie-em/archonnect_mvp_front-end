@@ -18,7 +18,13 @@ export const getPlanFailure = error => ({
 
 export const getPlan = id => dispatch => {
   dispatch(getPlanRequest());
-  axios.get(`${BASEURL}/plans/${id}`, { withCredentials: true })
+  axios.get(`${BASEURL}/plans/${id}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    withCredentials: true,
+  })
     .then(response => {
       dispatch(getPlanSuccess(response.data));
     }).catch(error => {

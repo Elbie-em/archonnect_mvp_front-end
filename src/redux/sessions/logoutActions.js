@@ -17,7 +17,13 @@ export const logoutFailure = error => ({
 
 export const logout = () => dispatch => {
   dispatch(logoutRequest());
-  axios.delete(`${BASEURL}/logout`, { withCredentials: true })
+  axios.delete(`${BASEURL}/logout`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    withCredentials: true,
+  })
     .then(response => {
       dispatch(logoutSuccess(response.data));
     }).catch(error => {

@@ -20,6 +20,10 @@ export const createUser = data => dispatch => {
   axios.post(`${BASEURL}/registrations`,
     data,
     {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
       withCredentials: true,
     })
     .then(response => {

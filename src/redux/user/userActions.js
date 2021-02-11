@@ -17,7 +17,13 @@ export const checkUserFailure = error => ({
 
 export const checkUser = email => dispatch => {
   dispatch(checkUserRequest());
-  return axios.get(`${BASEURL}/registrations/${email}`)
+  return axios.get(`${BASEURL}/registrations/${email}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    withCredentials: true,
+  })
     .then(response => dispatch(checkUserSuccess(response.data)))
     .catch(error => dispatch(checkUserFailure(error)));
 };

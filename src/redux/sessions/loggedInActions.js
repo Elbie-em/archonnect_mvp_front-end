@@ -17,7 +17,13 @@ export const checkLoggedInFailure = error => ({
 
 export const checkLoggedInStatus = () => dispatch => {
   dispatch(checkLoggedInRequest());
-  axios.get(`${BASEURL}/logged_in`, { withCredentials: true })
+  axios.get(`${BASEURL}/logged_in`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    withCredentials: true,
+  })
     .then(response => {
       dispatch(checkLoggedInSuccess(response.data));
     }).catch(error => {
