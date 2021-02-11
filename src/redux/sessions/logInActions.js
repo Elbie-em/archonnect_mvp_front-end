@@ -17,7 +17,7 @@ export const logInFailure = error => ({
 
 export const logIn = data => dispatch => {
   dispatch(logInRequest());
-  return axios.post(`${BASEURL}/api/v1/sessions`, data, { withCredentials: true })
+  return axios.post(`${BASEURL}/sessions`, data, { withCredentials: true })
     .then(response => dispatch(logInSuccess(response.data)))
     .catch(error => dispatch(logInFailure(error)));
 };
