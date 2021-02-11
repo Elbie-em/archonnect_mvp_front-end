@@ -1,18 +1,18 @@
 const reviewInfo = [
   {
-    img_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBkqCNfw7uMqKtPZwi0Thv8GzsZiptsbV4fQ&usqp=CAU',
+    img_url: 'https://s3.ivisa.com/website-assets/blog/id-photo2.jpg',
     title: 'Engineer',
     name: 'Andy Svestov',
     comment: 'I love the originality in the designs.',
   },
   {
-    img_url: 'https://bidunart.com/wp-content/uploads/2019/12/Portrait197a.jpg',
+    img_url: 'https://i.stack.imgur.com/7v477.jpg',
     title: 'Artist',
     name: 'Gloria Sanchez',
     comment: 'The best I have ever seen!',
   },
   {
-    img_url: 'https://photos.smugmug.com/Portfolios/FEMALE-STUDIO-FINE-ART-PORTRAITURE/i-X8d3Hd8/0/875fb25c/L/Femaleportraits348b-L.jpg',
+    img_url: 'https://i.pinimg.com/236x/0d/cd/3a/0dcd3adea10aebf26fa8d90a84581db6.jpg',
     title: 'Model',
     name: 'Crystal Vandani',
     comment: 'Designed with direction. I love it.',
@@ -24,7 +24,7 @@ const reviewInfo = [
     comment: 'Extreme outstanding detail all through.',
   },
   {
-    img_url: 'http://d279m997dpfwgl.cloudfront.net/wp/2020/07/Emmanuel-1000x776.jpg',
+    img_url: 'https://lottery2usa.com/wp-content/uploads/2016/06/well_composed_2.jpg',
     title: 'Business Analyst',
     name: 'Emmanuel Uche',
     comment: 'I will never go anywhere else really!',

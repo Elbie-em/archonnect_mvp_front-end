@@ -104,8 +104,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 SignIn.propTypes = {
-  history: PropTypes.arrayOf(PropTypes.object).isRequired,
-  status: PropTypes.arrayOf(PropTypes.object).isRequired,
+  history: PropTypes.instanceOf(Object).isRequired,
+  status: PropTypes.instanceOf(Object).isRequired,
   login: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.func.isRequired,
 };

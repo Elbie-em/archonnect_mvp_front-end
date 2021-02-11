@@ -157,11 +157,11 @@ const Home = ({
             + 324 887 59 67
           </p>
           <br />
-          <i className="fab fa-facebook facebook fa-2x" />
+          <i className="fab fa-facebook facebook fa-2x social-link" />
           <span className="text-w">XX</span>
-          <i className="fab fa-twitter-square twitter fa-2x" />
+          <i className="fab fa-twitter-square twitter fa-2x social-link" />
           <span className="text-w">XX</span>
-          <i className="fab fa-instagram instagram fa-2x" />
+          <i className="fab fa-instagram instagram fa-2x social-link" />
           <br />
           <br />
           <p className="text-muted custom-font-a xs-font">
