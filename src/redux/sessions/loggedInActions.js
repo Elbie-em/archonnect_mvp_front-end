@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { CHECK_LOGGED_IN_FAILURE, CHECK_LOGGED_IN_REQUEST, CHECK_LOGGED_IN_SUCCESS } from './loggedInTypes';
+import BASEURL from '../../staticData/API/api';
 
 export const checkLoggedInRequest = () => ({
   type: CHECK_LOGGED_IN_REQUEST,
@@ -16,7 +17,7 @@ export const checkLoggedInFailure = error => ({
 
 export const checkLoggedInStatus = () => dispatch => {
   dispatch(checkLoggedInRequest());
-  axios.get('https://api-archonnect-mvp.herokuapp.com/api/v1/logged_in', { withCredentials: true })
+  axios.get(`${BASEURL}/logged_in`, { withCredentials: true })
     .then(response => {
       dispatch(checkLoggedInSuccess(response.data));
     }).catch(error => {

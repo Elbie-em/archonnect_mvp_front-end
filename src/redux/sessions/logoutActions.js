@@ -1,4 +1,5 @@
 import axios from 'axios';
+import BASEURL from '../../staticData/API/api';
 import { LOG_OUT_FAILURE, LOG_OUT_REQUEST, LOG_OUT_SUCCESS } from './logoutTypes';
 
 export const logoutRequest = () => ({
@@ -16,7 +17,7 @@ export const logoutFailure = error => ({
 
 export const logout = () => dispatch => {
   dispatch(logoutRequest());
-  axios.delete('https://api-archonnect-mvp.herokuapp.com/api/v1/logout', { withCredentials: true })
+  axios.delete(`${BASEURL}/logout`, { withCredentials: true })
     .then(response => {
       dispatch(logoutSuccess(response.data));
     }).catch(error => {

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { LOG_IN_FAILURE, LOG_IN_REQUEST, LOG_IN_SUCCESS } from './logInTypes';
+import BASEURL from '../../staticData/API/api';
 
 export const logInRequest = () => ({
   type: LOG_IN_REQUEST,
@@ -16,7 +17,7 @@ export const logInFailure = error => ({
 
 export const logIn = data => dispatch => {
   dispatch(logInRequest());
-  return axios.post('https://api-archonnect-mvp.herokuapp.com/api/v1/sessions', data, { withCredentials: true })
+  return axios.post(`${BASEURL}/api/v1/sessions`, data, { withCredentials: true })
     .then(response => dispatch(logInSuccess(response.data)))
     .catch(error => dispatch(logInFailure(error)));
 };

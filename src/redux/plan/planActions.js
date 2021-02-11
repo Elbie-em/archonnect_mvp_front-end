@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { GET_PLAN_FAILURE, GET_PLAN_SUCCESS, GET_PLAN_REQUEST } from './planTypes';
+import BASEURL from '../../staticData/API/api';
 
 export const getPlanRequest = () => ({
   type: GET_PLAN_REQUEST,
@@ -17,7 +18,7 @@ export const getPlanFailure = error => ({
 
 export const getPlan = id => dispatch => {
   dispatch(getPlanRequest());
-  axios.get(`https://api-archonnect-mvp.herokuapp.com/api/v1/plans/${id}`, { withCredentials: true })
+  axios.get(`${BASEURL}/${id}`, { withCredentials: true })
     .then(response => {
       dispatch(getPlanSuccess(response.data));
     }).catch(error => {

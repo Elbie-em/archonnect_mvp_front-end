@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { CREATE_USER_FAILURE, CREATE_USER_REQUEST, CREATE_USER_SUCCESS } from './registrationTypes';
+import BASEURL from '../../staticData/API/api';
 
 export const createUserRequest = () => ({
   type: CREATE_USER_REQUEST,
@@ -16,7 +17,7 @@ export const createUserFailure = error => ({
 
 export const createUser = data => dispatch => {
   dispatch(createUserRequest());
-  axios.post('https://api-archonnect-mvp.herokuapp.com/api/v1/registrations',
+  axios.post(`${BASEURL}/registrations`,
     data,
     {
       withCredentials: true,

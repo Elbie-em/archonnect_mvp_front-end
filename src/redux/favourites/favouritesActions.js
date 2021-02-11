@@ -4,6 +4,7 @@ import {
   GET_FAVOURITES_REQUEST, CREATE_FAVOURITE_FAILURE,
   CREATE_FAVOURITE_REQUEST, CREATE_FAVOURITE_SUCCESS,
 } from './favouritesTypes';
+import BASEURL from '../../staticData/API/api';
 
 export const getFavouriteRequest = () => ({
   type: GET_FAVOURITES_REQUEST,
@@ -35,14 +36,14 @@ export const createFavouriteFailure = error => ({
 
 export const createFavourite = data => dispatch => {
   dispatch(createFavouriteRequest());
-  return axios.post('https://api-archonnect-mvp.herokuapp.com/api/v1/favourites', data, { withCredentials: true })
+  return axios.post(`${BASEURL}/favourites`, data, { withCredentials: true })
     .then(response => dispatch(createFavouriteSuccess(response.data)))
     .catch(error => dispatch(createFavouriteFailure(error)));
 };
 
 export const getFavourites = () => dispatch => {
   dispatch(getFavouriteRequest());
-  axios.get('https://api-archonnect-mvp.herokuapp.com/api/v1/favourites', { withCredentials: true })
+  axios.get(`${BASEURL}/favourites`, { withCredentials: true })
     .then(response => {
       dispatch(getFavouriteSuccess(response.data));
     }).catch(error => {
