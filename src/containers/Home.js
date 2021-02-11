@@ -7,7 +7,7 @@ import ReviewCard from '../components/ReviewCard';
 import { checkLoggedInStatus, logout } from '../redux';
 
 const Home = ({
-  history, status, isLoggedIn, logout,
+  status, isLoggedIn, logout,
 }) => {
   useEffect(() => {
     isLoggedIn();
@@ -16,8 +16,8 @@ const Home = ({
   const handleLogout = () => {
     logout();
     setTimeout(() => {
-      history.push('/');
-    }, 3000);
+      window.location.reload(true);
+    }, 1500);
   };
 
   const showAuth = () => {
@@ -183,7 +183,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 Home.propTypes = {
-  history: PropTypes.instanceOf(Object).isRequired,
   status: PropTypes.instanceOf(Object).isRequired,
   logout: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.func.isRequired,
