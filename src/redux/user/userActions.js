@@ -1,4 +1,5 @@
 import axios from 'axios';
+import BASEURL from '../../staticData/API/api';
 import { CHECK_USER_FAILURE, CHECK_USER_REQUEST, CHECK_USER_SUCCESS } from './userTypes';
 
 export const checkUserRequest = () => ({
@@ -16,7 +17,7 @@ export const checkUserFailure = error => ({
 
 export const checkUser = email => dispatch => {
   dispatch(checkUserRequest());
-  return axios.get(`https://api-archonnect-mvp.herokuapp.com/api/v1/${email}`)
+  return axios.get(`${BASEURL}/registrations/${email}`)
     .then(response => dispatch(checkUserSuccess(response.data)))
     .catch(error => dispatch(checkUserFailure(error)));
 };
