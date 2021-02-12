@@ -38,7 +38,7 @@ export const createFavourite = data => dispatch => {
   dispatch(createFavouriteRequest());
   return axios.post(`${BASEURL}/favourites`, data, {
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': 'https://archonnect-mvp.herokuapp.com/',
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },
@@ -52,7 +52,7 @@ export const getFavourites = () => dispatch => {
   dispatch(getFavouriteRequest());
   axios.get(`${BASEURL}/favourites`, {
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': 'https://archonnect-mvp.herokuapp.com/',
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },

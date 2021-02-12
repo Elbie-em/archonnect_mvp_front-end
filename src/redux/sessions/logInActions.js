@@ -20,7 +20,7 @@ export const logIn = data => dispatch => {
   return axios.post(`${BASEURL}/sessions`, data,
     {
       headers: {
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': 'https://archonnect-mvp.herokuapp.com/',
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },

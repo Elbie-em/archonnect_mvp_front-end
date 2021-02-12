@@ -20,7 +20,7 @@ export const getPlans = () => dispatch => {
   dispatch(getPlansRequest());
   axios.get(`${BASEURL}/plans`, {
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': 'https://archonnect-mvp.herokuapp.com/',
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },

@@ -19,7 +19,7 @@ export const checkUser = email => dispatch => {
   dispatch(checkUserRequest());
   return axios.get(`${BASEURL}/registrations/${email}`, {
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': 'https://archonnect-mvp.herokuapp.com/',
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },
