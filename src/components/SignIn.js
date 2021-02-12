@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logIn, checkLoggedInStatus } from '../redux';
@@ -26,12 +27,13 @@ const SignIn = ({
       .then(response => {
         const res = response.payload;
         if (res.status === 'created' && res.logged_in) {
+          toast.success('Successfully signed in');
           history.push('/houseplans');
         } else if (res.status === 401) {
-          alert('Enter a valid email or password');// eslint-disable-line no-alert
+          toast.warn('Enter a valid email or password');
         }
       }).catch(e => {
-        alert(e);// eslint-disable-line no-alert
+        toast.warn(e);
       });
 
     event.preventDefault();

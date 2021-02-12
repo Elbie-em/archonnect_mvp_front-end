@@ -21,6 +21,7 @@ export const createUser = data => dispatch => {
     data,
     {
       headers: {
+        'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },

@@ -19,6 +19,7 @@ export const logout = () => dispatch => {
   dispatch(logoutRequest());
   axios.delete(`${BASEURL}/logout`, {
     headers: {
+      'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },

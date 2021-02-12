@@ -19,6 +19,7 @@ export const checkUser = email => dispatch => {
   dispatch(checkUserRequest());
   return axios.get(`${BASEURL}/registrations/${email}`, {
     headers: {
+      'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },

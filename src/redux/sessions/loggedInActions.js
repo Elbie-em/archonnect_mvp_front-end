@@ -19,6 +19,7 @@ export const checkLoggedInStatus = () => dispatch => {
   dispatch(checkLoggedInRequest());
   axios.get(`${BASEURL}/logged_in`, {
     headers: {
+      'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },

@@ -20,6 +20,7 @@ export const getPlans = () => dispatch => {
   dispatch(getPlansRequest());
   axios.get(`${BASEURL}/plans`, {
     headers: {
+      'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },

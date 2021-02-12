@@ -38,6 +38,7 @@ export const createFavourite = data => dispatch => {
   dispatch(createFavouriteRequest());
   return axios.post(`${BASEURL}/favourites`, data, {
     headers: {
+      'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },
@@ -51,6 +52,7 @@ export const getFavourites = () => dispatch => {
   dispatch(getFavouriteRequest());
   axios.get(`${BASEURL}/favourites`, {
     headers: {
+      'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },

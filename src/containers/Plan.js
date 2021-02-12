@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -29,13 +30,13 @@ const Plan = ({
         let message = '';
         if (res.status === 202) {
           message = res.message;
-          alert(message);// eslint-disable-line no-alert
+          toast.success(message);
         } else if (res.status === 500) {
           message = res.message;
-          alert(message);// eslint-disable-line no-alert
+          toast.warn(message);
         }
       }).catch(err => {
-        alert(err);// eslint-disable-line no-alert
+        toast.warn(err);
       });
   };
 

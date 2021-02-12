@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
@@ -29,13 +30,14 @@ const SignUp = ({
       .then(response => {
         const data = response.payload;
         if (!_.isEmpty(data.user)) {
-          alert('User exists or passwords did not match, please try again!!!');// eslint-disable-line no-alert
+          toast.warn('User exists or passwords did not match, please try again!!!');
         } else {
           createUser(userData);
+          toast.success('User created successfully');
           history.push('/houseplans');
         }
       }).catch(e => {
-        alert(e); // eslint-disable-line no-alert
+        toast.warn(e);
       });
 
     event.preventDefault();
