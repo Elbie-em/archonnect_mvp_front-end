@@ -17,14 +17,7 @@ export const logoutFailure = error => ({
 
 export const logout = () => dispatch => {
   dispatch(logoutRequest());
-  axios.delete(`${BASEURL}/logout`, {
-    headers: {
-      'Access-Control-Allow-Origin': 'https://archonnect-mvp.herokuapp.com/',
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    withCredentials: true,
-  })
+  axios.delete(`${BASEURL}/logout`)
     .then(response => {
       dispatch(logoutSuccess(response.data));
     }).catch(error => {

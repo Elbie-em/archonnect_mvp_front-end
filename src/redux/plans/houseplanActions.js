@@ -18,14 +18,7 @@ export const getPlansFailure = error => ({
 
 export const getPlans = () => dispatch => {
   dispatch(getPlansRequest());
-  axios.get(`${BASEURL}/plans`, {
-    headers: {
-      'Access-Control-Allow-Origin': 'https://archonnect-mvp.herokuapp.com/',
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    withCredentials: true,
-  })
+  axios.get(`${BASEURL}/plans`)
     .then(response => {
       dispatch(getPlansSuccess(response.data));
     }).catch(error => {

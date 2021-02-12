@@ -17,14 +17,7 @@ export const checkLoggedInFailure = error => ({
 
 export const checkLoggedInStatus = () => dispatch => {
   dispatch(checkLoggedInRequest());
-  axios.get(`${BASEURL}/logged_in`, {
-    headers: {
-      'Access-Control-Allow-Origin': 'https://archonnect-mvp.herokuapp.com/',
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    withCredentials: true,
-  })
+  axios.get(`${BASEURL}/logged_in`)
     .then(response => {
       dispatch(checkLoggedInSuccess(response.data));
     }).catch(error => {

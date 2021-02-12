@@ -17,16 +17,7 @@ export const createUserFailure = error => ({
 
 export const createUser = data => dispatch => {
   dispatch(createUserRequest());
-  axios.post(`${BASEURL}/registrations`,
-    data,
-    {
-      headers: {
-        'Access-Control-Allow-Origin': 'https://archonnect-mvp.herokuapp.com/',
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      withCredentials: true,
-    })
+  axios.post(`${BASEURL}/registrations`,data)
     .then(response => {
       dispatch(createUserSuccess(response.data));
     }).catch(error => {

@@ -17,14 +17,7 @@ export const checkUserFailure = error => ({
 
 export const checkUser = email => dispatch => {
   dispatch(checkUserRequest());
-  return axios.get(`${BASEURL}/registrations/${email}`, {
-    headers: {
-      'Access-Control-Allow-Origin': 'https://archonnect-mvp.herokuapp.com/',
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    withCredentials: true,
-  })
+  return axios.get(`${BASEURL}/registrations/${email}`)
     .then(response => dispatch(checkUserSuccess(response.data)))
     .catch(error => dispatch(checkUserFailure(error)));
 };
