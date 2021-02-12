@@ -4,6 +4,7 @@ import {
   BrowserRouter, Redirect, Route, Switch,
 } from 'react-router-dom';
 import store from './redux/store';
+import 'react-toastify/dist/ReactToastify.css';
 import Home from './containers/Home';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
