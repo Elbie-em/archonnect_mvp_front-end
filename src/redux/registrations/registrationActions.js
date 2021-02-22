@@ -17,7 +17,7 @@ export const createUserFailure = error => ({
 
 export const createUser = data => dispatch => {
   dispatch(createUserRequest());
-  axios.post(`${BASEURL}/registrations`, data)
+  axios.post(`${BASEURL}/registrations`, data, { withCredentials: true })
     .then(response => {
       dispatch(createUserSuccess(response.data));
     }).catch(error => {

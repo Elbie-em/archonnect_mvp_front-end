@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logIn, checkLoggedInStatus } from '../redux';
@@ -30,10 +30,10 @@ const SignIn = ({
           toast.success('Successfully signed in');
           history.push('/houseplans');
         } else if (res.status === 401) {
-          toast.warn('Enter a valid email or password');
+          toast.error('Enter a valid email or password');
         }
       }).catch(e => {
-        toast.warn(e);
+        toast.error(e);
       });
 
     event.preventDefault();
@@ -90,6 +90,8 @@ const SignIn = ({
     <div className="auth-container">
       <div className="container text-center">
         <div className="empty-div" />
+        <ToastContainer />
+        <div />
         {showData()}
       </div>
     </div>

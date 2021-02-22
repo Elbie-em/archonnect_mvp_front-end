@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import _ from 'lodash';
+import { ToastContainer } from 'react-toastify';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -96,6 +97,7 @@ const Houseplans = ({
       <label htmlFor="nav-trigger"><span className="hidden_nav" /></label>
       {/* eslint-enable  jsx-a11y/label-has-associated-control */}
       <div className="content-wrap">
+        <ToastContainer />
         <h2 className="text-center custom-font-a plan-header">House Plans</h2>
         {showPlans()}
       </div>

@@ -36,14 +36,14 @@ export const createFavouriteFailure = error => ({
 
 export const createFavourite = data => dispatch => {
   dispatch(createFavouriteRequest());
-  return axios.post(`${BASEURL}/favourites`, data)
+  return axios.post(`${BASEURL}/favourites`, data, { withCredentials: true })
     .then(response => dispatch(createFavouriteSuccess(response.data)))
     .catch(error => dispatch(createFavouriteFailure(error)));
 };
 
 export const getFavourites = () => dispatch => {
   dispatch(getFavouriteRequest());
-  axios.get(`${BASEURL}/favourites`)
+  axios.get(`${BASEURL}/favourites`, { withCredentials: true })
     .then(response => {
       dispatch(getFavouriteSuccess(response.data));
     }).catch(error => {

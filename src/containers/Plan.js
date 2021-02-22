@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -36,7 +36,7 @@ const Plan = ({
           toast.warn(message);
         }
       }).catch(err => {
-        toast.warn(err);
+        toast.error(err);
       });
   };
 
@@ -82,6 +82,7 @@ const Plan = ({
 
   return (
     <div className="sp-bg">
+      <ToastContainer />
       {showPlan()}
     </div>
   );
