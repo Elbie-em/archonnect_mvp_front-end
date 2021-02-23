@@ -1,43 +1,125 @@
-# Getting Started with Create React App
+# Archonnect Frontend
+Building a React and Redux front-end application using the custom archonnect API service. bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This application uses Routing to traverse between a list of countries and details of a country when it is clicked.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Live Demo
 
-## Available Scripts
+> Click [here](https://archonnect-mvp.herokuapp.com/) for live demo
 
-In the project directory, you can run:
+![screenshot](public/screenshot.png)
 
-### `npm start`
+## Built With
+- React-redux
+- Redux
+- Node.js
+- React-Create-App
+- Archonnect API
+- npm
+- Heroku
+- CSS
+- ES6
+- jest
+- eslint
+- stylelint
 
-Runs the app in the development mode.\
+## Getting Started
+
+### Prerequisites
+  * Git
+  * npm
+  * Node.js
+  * IDE (Intergrated Development Enviroment)
+  * Web Browser (Chrome, Mozilla)
+
+### Steps
+- From the command line/terminal clone the repository
+
+```
+$ git clone https://github.com/Elbie-em/archonnect_mvp_front-end.git
+```
+
+**Available Scripts**
+
+cd into the project directory, and you can run:
+
+```
+$ npm install
+
+Installs all dependencies
+```
+
+```
+$ npm start
+
+Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The page will reload if you make edits.<br />
+```
 
-### `npm test`
+```
+$ npm test
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs all tests
+```
 
-### `npm run build`
+## Deployment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Instructions from [Heroku Buildpack](https://github.com/mars/create-react-app-buildpack).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Generate a react app.
+replace *$APP_NAME* with the name for your unique app.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npx create-react-app@3.x $APP_NAME
+```
+Create the heroku app.
+replace *$APP_NAME* with the name for your unique app.
 
-### `npm run eject`
+```
+heroku create $APP_NAME --buildpack mars/create-react-app
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Deploy.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+git push heroku master
+```
+Visit the app's public URL in your browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+heroku open
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Application features
+
+- The user is able to sign up for the service.
+- The application allows the user to view a list of houseplans up for bid.
+- The user can view detailed information about a houseplan *view* .
+- The user is able to add a plan to their favourites.
+   
+## Author
+
+👤 **Elbie Moonga**
+
+- GitHub: [@Elbie-Em](https://github.com/Elbie-em)
+- Twitter: [ElbieEm](https://twitter.com/ElbieEm)
+- LinkedIn: [elbie-moonga](https://www.linkedin.com/in/elbiemoonga/) 
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Elbie-em/archonnect_mvp_front-end/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- [Microverse](microverse.org)
+- [Alexey Savitskiy on Behance](https://www.behance.net/gallery/37706679/Circle-(Landing-page-Dashboard-Mobile-App))
+- [Kris Kuchinka - Codepen](https://codepen.io/kriskuchinka/pen/PqMejr)
 
 ## Learn More
 
@@ -45,26 +127,4 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📝 License
