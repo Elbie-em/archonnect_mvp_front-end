@@ -14,8 +14,8 @@ const Plan = ({
   const planId = match.params.id;
   let userId = '';
   useEffect(() => {
-    getPlan(planId);
     isLoggedIn();
+    getPlan(planId);
   }, [getPlan, isLoggedIn]);
 
   if (loggedInStatus.logged_in) {

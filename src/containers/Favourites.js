@@ -11,8 +11,8 @@ const Favourites = ({
   history, loggedInStatus, isLoggedIn, favourites, getFavourites, logout,
 }) => {
   useEffect(() => {
-    getFavourites();
     isLoggedIn();
+    getFavourites();
   }, [getFavourites, isLoggedIn]);
 
   const handleLogout = () => {

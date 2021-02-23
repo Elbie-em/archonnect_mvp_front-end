@@ -13,8 +13,8 @@ const Houseplans = ({
   history, loggedInStatus, isLoggedIn, plans, getPlans, logout,
 }) => {
   useEffect(() => {
-    getPlans();
     isLoggedIn();
+    getPlans();
   }, [getPlans, isLoggedIn]);
 
   const handleLogout = () => {
