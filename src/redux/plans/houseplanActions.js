@@ -19,9 +19,6 @@ export const getPlansFailure = error => ({
 export const getPlans = () => dispatch => {
   dispatch(getPlansRequest());
   return axios.get(`${BASEURL}/plans`, { withCredentials: true })
-    .then(response => {
-     return dispatch(getPlansSuccess(response.data));
-    }).catch(error => {
-      return dispatch(getPlansFailure(error.message));
-    });
+    .then(response => dispatch(getPlansSuccess(response.data)))
+    .catch(error => dispatch(getPlansFailure(error.message)));
 };

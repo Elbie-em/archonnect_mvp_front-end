@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import axios from 'axios';
 import { checkLoggedInStatus } from '../../redux';
 import { CHECK_LOGGED_IN_FAILURE, CHECK_LOGGED_IN_REQUEST, CHECK_LOGGED_IN_SUCCESS } from '../../redux/sessions/loggedInTypes';
-import loggedInStatus from '../jsonData/loggedInStatus.json'
+import loggedInStatus from '../jsonData/loggedInStatus.json';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -24,7 +24,7 @@ describe('API Authentication Test', () => {
         expect(action[1].type).toBe(CHECK_LOGGED_IN_SUCCESS);
         expect(action[1].payload).toEqual({ results: loggedInStatus });
       });
-  })
+  });
 
   test('Erroneously fetches data from the API', () => {
     const errorMessage = 'Error fetching data from API';
@@ -40,4 +40,4 @@ describe('API Authentication Test', () => {
         expect(action[1].payload).toEqual(errorMessage);
       });
   });
-})
+});

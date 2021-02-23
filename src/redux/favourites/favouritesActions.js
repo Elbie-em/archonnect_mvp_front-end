@@ -44,9 +44,6 @@ export const createFavourite = data => dispatch => {
 export const getFavourites = () => dispatch => {
   dispatch(getFavouriteRequest());
   return axios.get(`${BASEURL}/favourites`, { withCredentials: true })
-    .then(response => {
-      return dispatch(getFavouriteSuccess(response.data));
-    }).catch(error => {
-      return dispatch(getFavouriteFailure(error.message));
-    });
+    .then(response => dispatch(getFavouriteSuccess(response.data)))
+    .catch(error => dispatch(getFavouriteFailure(error.message)));
 };
