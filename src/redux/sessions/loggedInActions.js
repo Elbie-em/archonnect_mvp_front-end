@@ -17,10 +17,10 @@ export const checkLoggedInFailure = error => ({
 
 export const checkLoggedInStatus = () => dispatch => {
   dispatch(checkLoggedInRequest());
-  axios.get(`${BASEURL}/logged_in`, { withCredentials: true })
+  return axios.get(`${BASEURL}/logged_in`, { withCredentials: true })
     .then(response => {
-      dispatch(checkLoggedInSuccess(response.data));
+      return dispatch(checkLoggedInSuccess(response.data));
     }).catch(error => {
-      dispatch(checkLoggedInFailure(error));
+      return dispatch(checkLoggedInFailure(error.message));
     });
 };

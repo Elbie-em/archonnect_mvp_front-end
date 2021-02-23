@@ -43,10 +43,10 @@ export const createFavourite = data => dispatch => {
 
 export const getFavourites = () => dispatch => {
   dispatch(getFavouriteRequest());
-  axios.get(`${BASEURL}/favourites`, { withCredentials: true })
+  return axios.get(`${BASEURL}/favourites`, { withCredentials: true })
     .then(response => {
-      dispatch(getFavouriteSuccess(response.data));
+      return dispatch(getFavouriteSuccess(response.data));
     }).catch(error => {
-      dispatch(getFavouriteFailure(error));
+      return dispatch(getFavouriteFailure(error.message));
     });
 };
