@@ -27,8 +27,10 @@ const SignIn = ({
       .then(response => {
         const res = response.payload;
         if (res.status === 'created' && res.logged_in) {
-          toast.success('Successfully signed in');
-          history.push('/houseplans');
+          setTimeout(() => {
+            toast.success('Successfully signed in');
+            history.push('/houseplans');
+          }, 2000);
         } else if (res.status === 401) {
           toast.error('Enter a valid email or password');
         }
