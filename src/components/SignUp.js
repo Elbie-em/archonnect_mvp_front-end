@@ -33,8 +33,10 @@ const SignUp = ({
           toast.error('User exists or passwords did not match, please try again!!!');
         } else {
           createUser(userData);
-          toast.success('Sign up successful');
-          history.push('/houseplans');
+          setTimeout(() => {
+            toast.success('Sign up successful');
+            history.push('/houseplans');
+          }, 2000);
         }
       }).catch(e => {
         toast.error(e);
