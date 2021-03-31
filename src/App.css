@@ -1,3 +1,302 @@
-.App {
+::-webkit-scrollbar {
+  display: none;
+}
+
+body,
+html {
+  height: 100%;
+  background: #f7f7f5;
+}
+
+.custom-font-a {
+  font-family: 'Kanit', sans-serif;
+}
+
+.custom-font-b {
+  font-family: 'Roboto', sans-serif;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  line-height: 50px;
+  font-weight: 900;
+}
+
+.nav-link:hover {
+  color: #7b7a78;
+  cursor: pointer;
+}
+
+.section-a {
+  width: 100%;
+  height: 520px;
+  background-image: url("https://i.ibb.co/0M6gWc5/bg-image.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.section-b {
+  width: 100%;
+  height: 620px;
+  background-color: #f7f7f5;
+}
+
+.section-c {
+  width: 100%;
+  height: 520px;
+  background-color: #e7f0ff;
+}
+
+.section-d {
+  width: 100%;
+  height: 480px;
+  background-color: #f7f7f5;
+  overflow: hidden;
+}
+
+.section-e {
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(90deg, rgba(66, 68, 71, 0.205) 0%, rgba(57, 63, 66, 0.493) 20%), url("https://i.ibb.co/0M6gWc5/bg-image.jpg") -1230px 10px;
+  background-position: center;
+  background-size: cover;
+}
+
+.section-f {
+  width: 100%;
+  height: 310px;
+  background-color: #f7f7f5;
+}
+
+.empty-div {
+  height: 100px;
+  width: 100%;
+}
+
+.home-logo {
+  width: 200px;
+  height: 70px;
+}
+
+.footer-logo {
+  width: 150px;
+  height: auto;
+}
+
+.btn-start {
+  background-color: #f65d0e;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.auth-btn {
+  background-color: #f65d0e;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 400;
+  width: 25%;
+  color: #fff;
+  border: none;
+}
+
+.btn-start:hover,
+.auth-btn:hover {
+  color: #7b7a78;
+}
+
+.mock-img {
+  width: 100%;
+  height: auto;
+}
+
+.xs-font {
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.text-w {
+  color: #f7f7f5;
+}
+
+.facebook {
+  color: #3c51a5;
+}
+
+.twitter {
+  color: #5db2f7;
+}
+
+.instagram {
+  color: #da488d;
+}
+
+.social-link:hover {
+  cursor: pointer;
+}
+
+.client-container {
+  overflow: hidden;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 300px;
+  width: 100%;
+}
+
+.review-card {
   text-align: center;
+  display: inline-block;
+  flex-direction: column;
+  height: 220px;
+  width: 350px;
+  background-color: #fff;
+  padding: 10px;
+  margin: 15px;
+}
+
+.rc-img {
+  height: 80px;
+  width: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .mock-img {
+    display: none;
+  }
+}
+
+.auth-container {
+  background: linear-gradient(180deg, rgba(232, 236, 236, 0.929) 0%, rgba(234, 230, 224, 0.586) 100%), url("https://i.ibb.co/0M6gWc5/bg-image.jpg") -1230px 10px;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.plan-header {
+  position: relative;
+  bottom: 40px;
+}
+
+.plans-container {
+  overflow: hidden;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 90%;
+  width: 100%;
+}
+
+.plan-card {
+  display: inline-block;
+  height: 90%;
+  width: 350px;
+  margin: 15px;
+}
+
+.fav-card {
+  width: 300px;
+  height: 280px;
+  margin: 15px;
+}
+
+.fav-card-th {
+  width: 100%;
+  height: auto;
+}
+
+.plan-design {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.plan-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.al-right {
+  text-align: right;
+}
+
+.loading-sp {
+  color: #f65d0e;
+}
+
+.sp-bg {
+  background: #f7f7f5;
+  width: 100%;
+  height: 100vh;
+}
+
+.blueprints {
+  width: 100%;
+  height: 40%;
+  overflow: hidden;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  white-space: nowrap;
+  padding: 20px;
+}
+
+.blueprint {
+  width: 400px;
+  height: auto;
+  margin: 10px;
+}
+
+.blueprint-info {
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 15%;
+}
+
+.blueprint-details {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+
+.btn-bid {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background-color: #f65d0e;
+  height: 60px;
+  width: 100%;
+}
+
+.fav-btn {
+  width: 120px;
+  background-color: #f65d0e;
+  font-size: 10px;
+}
+
+.btn-bid:hover,
+.fav-btn:hover {
+  cursor: pointer;
+  background-color: #c44709;
+}
+
+.favourite-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 500px;
+  width: 100%;
 }

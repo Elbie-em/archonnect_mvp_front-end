@@ -1,0 +1,44 @@
+{
+  "status": 200,
+  "result": [
+    {
+      "id": 2,
+      "name": "PUKEKURA329",
+      "details": "Designated entrance, Coved ceilings in the family, dining & entry, 2.55m stud height, Four bedrooms plus study nook, Three living areas, Covered alfresco area, Indoor/outdoor flow, Bedroom, ensuite & powder room, Kitchen and scullery, Tiled walk-in showers, Walk in wardrobe",
+      "architect_name": "Denzel Kuraani",
+      "rating": 4,
+      "price": 1089,
+      "design_img_url": "https://i.ibb.co/m91rWcF/lst-b-1.jpg",
+      "blueprint_one_url": "https://i.ibb.co/dpYzD4N/lst-b-2.jpg",
+      "blueprint_two_url": "https://i.ibb.co/hy8FrQP/lst-b-3.jpg",
+      "created_at": "2021-02-09T23:59:07.462Z",
+      "updated_at": "2021-02-09T23:59:07.462Z"
+    },
+    {
+      "id": 3,
+      "name": "ELITE301",
+      "details": "Two storey design, Four bedrooms, Designated entrance, Office, Two living areas, Indoor/Outdoor flow to covered area, Kitchen and scullery, Three bathrooms, Walk-in wardrobe, Walk-in linen, Separate laundry, Triple garaging",
+      "architect_name": "Gretchen Van deer",
+      "rating": 5,
+      "price": 1506,
+      "design_img_url": "https://i.ibb.co/qjw2rwy/lst-3-a.jpg",
+      "blueprint_one_url": "https://i.ibb.co/MgYvYBC/lst-3-b.jpg",
+      "blueprint_two_url": "https://i.ibb.co/vHTNswd/lst-3-c.jpg",
+      "created_at": "2021-02-09T23:59:27.704Z",
+      "updated_at": "2021-02-09T23:59:27.704Z"
+    },
+    {
+      "id": 6,
+      "name": "EMINENCE292",
+      "details": "Designated entrance, 2.7m stud to entry, dining, kitchen, family and living areas—2.4m elsewhere, Four bedrooms, Office nook, Double living open plan, Indoor/Outdoor flow to covered loggia roof, Kitchen and scullery, Bathroom and ensuite, Walk-in wardrobe, Walk-in linen, Separate Laundry, Third toilet, Triple garaging",
+      "architect_name": "Evan Foster",
+      "rating": 3,
+      "price": 728,
+      "design_img_url": "https://i.ibb.co/JqbM6Zj/lst-6-a.jpg",
+      "blueprint_one_url": "https://i.ibb.co/hXHhQfQ/lst-6-c.jpg",
+      "blueprint_two_url": "https://i.ibb.co/ZdJ6SHL/lst-6-b.jpg",
+      "created_at": "2021-02-10T00:00:29.084Z",
+      "updated_at": "2021-02-10T00:00:29.084Z"
+    }
+  ]
+}
