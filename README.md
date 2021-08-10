@@ -1,5 +1,5 @@
 # Archonnect Frontend
-Building a React and Redux front-end application using the custom archonnect API service. bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This application uses Routing to traverse between a list of countries and details of a country when it is clicked.
+Building a React and Redux front-end application using the custom archonnect API service. bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This application uses Routing to traverse between a list of house plans and details of a houseplan when it is clicked.
 
 # Live Demo
 
