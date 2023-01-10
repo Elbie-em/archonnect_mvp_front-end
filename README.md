@@ -3,7 +3,7 @@ Building a React and Redux front-end application using the custom archonnect API
 
 # Live Demo
 
-> Click [here](https://archonnect-mvp.herokuapp.com/) for live demo
+> TBD
 
 ![screenshot](public/screenshot.png)
 
